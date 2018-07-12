@@ -35,7 +35,7 @@ class QRDetector(object):
         if len(decoded_objs) > 0:
             detected = True
 
-        cv2.putText(frame, 'Detected: {}'.format(detected), (15, 30), cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 0), 1)
+        cv2.putText(frame, 'Detected: {}'.format(detected), (15, 30), cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 255), 1)
 
         return frame
 
