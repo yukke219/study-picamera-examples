@@ -30,7 +30,15 @@ class QRDetector(object):
         decoded_objs = self.decode(frame)
         # 認識したQRコードの位置を描画する
         frame = self.draw_positions(frame, decoded_objs)
+        
+        num = 0
+        if len(decoded_objs) > 0:
+            num = decoded_objs
+        
+        cv2.putText(frame, 'Num: {}'.format(num), (15, 30), cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 255), 1)
 
+        return frame
+    
         detected = False 
         if len(decoded_objs) > 0:
             detected = True
